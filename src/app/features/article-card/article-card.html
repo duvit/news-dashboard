@@ -1,0 +1,26 @@
+@if (article(); as a) {
+<article class="card">
+  <figure class="card__figure">
+    <img class="card__figure__image" [src]="a.image_url ?? ''" [alt]="a.title ?? 'Article image'" />
+  </figure>
+
+  <div class="card__info">
+    <span class="card__info__date">
+      <span class="material-symbols-outlined"> calendar_today </span>
+      <time class="card__info__date__text" [attr.datetime]="a.published_at">
+        {{ a.published_at | date : 'longDate' }}
+      </time>
+    </span>
+    <h2 class="card__info__title" [innerHTML]="a.title | highlight : keywords()"></h2>
+
+    <p
+      class="card__info__excerpt"
+      [innerHTML]="a.summary | limitWords : 100 | highlight : keywords()"
+    ></p>
+
+    <a [routerLink]="['/article', a.id]" class="card__info__link">
+      Read more <span class="material-symbols-outlined"> arrow_forward </span></a
+    >
+  </div>
+</article>
+}

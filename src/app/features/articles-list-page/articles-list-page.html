@@ -1,0 +1,25 @@
+<div class="container">
+  <app-article-search (search)="onSearch($event)" />
+
+  @if (loading()) {
+  <mat-spinner></mat-spinner>
+
+  } @else if (hasResults()) {
+  <p class="results-count">Results: {{ articlesData().count }}</p>
+
+  <div class="card-container">
+    @for (article of articlesData().results; track article.id) {
+    <app-article-card [article]="article" [keywords]="searchTerm()" />
+    }
+  </div>
+
+  <div class="pagination">
+    <button (click)="loadPage(articlesData().previous)" [disabled]="!articlesData().previous">
+      Back
+    </button>
+    <button (click)="loadPage(articlesData().next)" [disabled]="!articlesData().next">Next</button>
+  </div>
+  } @else {
+  <p>No results...</p>
+  }
+</div>

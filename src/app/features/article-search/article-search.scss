@@ -1,0 +1,26 @@
+.search {
+  display: flex;
+  align-items: center;
+  width: 600px;
+  height: 50px;
+  padding: 0 20px;
+  background-color: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+
+  &__icon {
+    color: #888;
+    font-size: 24px;
+  }
+
+  &__input {
+    margin-left: 20px;
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: var(--font-color);
+    background: transparent;
+  }
+}

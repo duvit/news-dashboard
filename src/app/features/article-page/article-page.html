@@ -1,0 +1,21 @@
+@if (hasArticle()) {
+<article class="article">
+  <figure class="article__cover">
+    <img
+      class="article__cover__image"
+      [src]="article()?.image_url ?? ''"
+      [alt]="article()?.title ?? 'Article image'"
+    />
+  </figure>
+  <div class="article__content">
+    <h1 class="article__content__title">{{ article()?.title }}</h1>
+    <p class="article__content__body">{{ article()?.summary }}</p>
+  </div>
+  <a routerLink="/" class="article__link"
+    ><span class="material-symbols-outlined"> arrow_back </span>Back to homepage</a
+  >
+</article>
+} @else {
+<mat-spinner></mat-spinner>
+
+}

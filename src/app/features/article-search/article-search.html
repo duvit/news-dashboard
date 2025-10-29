@@ -1,0 +1,11 @@
+<h2 class="search-title">Filter by keywords</h2>
+<div class="search">
+  <span class="material-symbols-outlined">search</span>
+  <input
+    type="text"
+    class="search__input"
+    [value]="term()"
+    (input)="onInput($event)"
+    placeholder="Search articles..."
+  />
+</div>
