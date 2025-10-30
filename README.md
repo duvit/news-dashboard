@@ -13,6 +13,7 @@ A Single Page Application (SPA) built with Angular to display and filter article
 
 - Field priority (`name` matches > `description` matches) not implemented due to API limitations.
 - Styles are basic; could be refined for a cleaner, more responsive UI.
+- Mobile layout (responsive design) should be added for better usability on smaller screens.  
 
 ## Deployment
 
